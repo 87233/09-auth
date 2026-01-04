@@ -4,7 +4,7 @@ import {
   HydrationBoundary,
   dehydrate,
 } from "@tanstack/react-query";
-import { fetchNoteById, getSingleNote } from "@/lib/api/api";
+import { fetchNoteById, getSingleNote } from "@/lib/api/clientApi";
 import NoteDetailsClient from "./NoteDetails.client";
 
 type Props = {

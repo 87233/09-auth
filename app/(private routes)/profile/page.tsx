@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Profile page",
     description:
       "Page for viewing and editing your user profile, including account information and avatar.",
-    url: "http://localhost:3000/profile",
+    url: "https://notehub.com/notes/profile",
     images: [
       {
         url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",

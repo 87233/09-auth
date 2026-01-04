@@ -13,10 +13,10 @@ export interface FetchNotesResponse {
   totalPages: number;
 }
 
-// export const getSingleNote = async (id: string) => {
-//   const res = await nextServer.get<Note>(`/notes/${id}`);
-//   return res.data;
-// };
+export const getSingleNote = async (id: string) => {
+  const res = await nextServer.get<Note>(`/notes/${id}`);
+  return res.data;
+};
 
 export const fetchNotes = async (
   params: FetchNotesParams
