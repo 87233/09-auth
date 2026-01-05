@@ -24,6 +24,10 @@ export default async function proxy(request: NextRequest) {
       const data = await checkServerSession();
       const setCookie = data.headers["set-cookie"];
 
+      if (!setCookie && isPrivateRoute) {
+        return NextResponse.redirect(new URL("/sign-in", request.url));
+      }
+
       if (setCookie) {
         const cookieArray = Array.isArray(setCookie) ? setCookie : [setCookie];
         for (const cookieStr of cookieArray) {
@@ -72,6 +76,8 @@ export default async function proxy(request: NextRequest) {
   if (isPrivateRoute) {
     return NextResponse.next();
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
